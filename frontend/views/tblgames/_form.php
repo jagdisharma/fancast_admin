@@ -19,20 +19,37 @@ use frontend\models\Tbltags;
 
     <?= $form->field($model, 'team2')->textInput(['maxlength' => true,'autocomplete'=>'off']) ?>
 
-    <?= $form->field($model, 'time')->widget(DateTimePicker::classname(), [
-        'options' => [
-                        'placeholder' => 'Enter time ...',
-                        'autocomplete'=>'off',
-                        'readonly'=>true,
-                        'value'=> date("Y-m-d H:i",$model->time),
-                    ],
-        'layout' => '{picker}{input}{remove}',
-        
-        'pluginOptions' => [
-            'autoclose' => true,
-            //'format' => 'mm/dd/yyyy hh:ii'
-        ]
-    ]);?>
+    <?php if($model->isNewRecord){?>
+        <?= $form->field($model, 'time')->widget(DateTimePicker::classname(), [
+            'options' => [
+                            'placeholder' => 'Enter time ...',
+                            'autocomplete'=>'off',
+                            'readonly'=>true,
+                            //'value'=> date("Y-m-d H:i",$model->time),
+                        ],
+            'layout' => '{picker}{input}{remove}',
+            
+            'pluginOptions' => [
+                'autoclose' => true,
+                //'format' => 'mm/dd/yyyy hh:ii'
+            ]
+        ]);?>
+    <?php } else {?>
+         <?= $form->field($model, 'time')->widget(DateTimePicker::classname(), [
+            'options' => [
+                            'placeholder' => 'Enter time ...',
+                            'autocomplete'=>'off',
+                            'readonly'=>true,
+                            'value'=> date("Y-m-d H:i",$model->time),
+                        ],
+            'layout' => '{picker}{input}{remove}',
+            
+            'pluginOptions' => [
+                'autoclose' => true,
+                //'format' => 'mm/dd/yyyy hh:ii'
+            ]
+        ]);?>
+    <?php }?>
 
     <table>
         <tr>
