@@ -84,7 +84,7 @@ class TblusersController extends Controller
         $mt = explode(' ', microtime()); //array to string conversion
         $new = ((int)$mt[1]) * 1000 + ((int)round($mt[0] * 1000));
 
-        if ($model->load(Yii::$app->request->post()) ) {
+        if ($model->load(Yii::$app->request->post())&& $model->validate() ) {
             $file= UploadedFile::getInstance($model,'image');
             if($file){
                 $imagename = 'users_ProfilePicture_'.$new;
@@ -121,7 +121,7 @@ class TblusersController extends Controller
         $mt = explode(' ', microtime());
         $new = ((int)$mt[1]) * 1000 + ((int)round($mt[0] * 1000));
 
-        if ($model->load(Yii::$app->request->post())){
+        if ($model->load(Yii::$app->request->post())&& $model->validate()){
             $fileprev = 'uploads/'.$oldfile;
             $imagename = 'users_ProfilePicture_'.$new;
             $model->image = UploadedFile::getInstance($model,'image');
