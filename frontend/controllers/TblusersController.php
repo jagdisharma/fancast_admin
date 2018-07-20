@@ -98,7 +98,7 @@ class TblusersController extends Controller
             $model->created_at = time();
             $model->updated_at = time();
             $model->save();
-            return $this->redirect(['view','id' => $model->user_id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
@@ -148,7 +148,7 @@ class TblusersController extends Controller
             }
             $model->updated_at = time();
             $model->save();
-            return $this->redirect(['view', 'id' => $model->user_id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [

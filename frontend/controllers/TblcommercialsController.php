@@ -97,7 +97,7 @@ class TblcommercialsController extends Controller
             $model->created_at = time();
             $model->updated_at = time();
             $model->save();
-            return $this->redirect(['view', 'id' => $model->ad_id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
@@ -145,7 +145,7 @@ class TblcommercialsController extends Controller
             $model->duration = $file['playtime_string'];
             $model->updated_at = time();
             $model->save();
-            return $this->redirect(['view', 'id' => $model->ad_id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [

@@ -94,7 +94,7 @@ class TblsoundeffectsController extends Controller
             $model->created_at = time();
             $model->updated_at = time();
             $model->save();
-            return $this->redirect(['view', 'id' => $model->sound_id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
@@ -139,7 +139,7 @@ class TblsoundeffectsController extends Controller
             }
             $model->updated_at = time();
             $model->save();
-            return $this->redirect(['view', 'id' => $model->sound_id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [
