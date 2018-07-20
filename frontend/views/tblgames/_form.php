@@ -30,7 +30,7 @@ use frontend\models\Tbltags;
         
         'pluginOptions' => [
             'autoclose' => true,
-            'format' => 'mm/dd/yyyy hh:ii'
+            //'format' => 'mm/dd/yyyy hh:ii'
         ]
     ]);?>
 
