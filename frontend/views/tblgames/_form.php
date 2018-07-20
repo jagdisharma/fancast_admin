@@ -24,6 +24,7 @@ use frontend\models\Tbltags;
                         'placeholder' => 'Enter time ...',
                         'autocomplete'=>'off',
                         'readonly'=>true,
+                        'value'=> date("Y-m-d H:i",$model->time),
                     ],
         'layout' => '{picker}{input}{remove}',
         
