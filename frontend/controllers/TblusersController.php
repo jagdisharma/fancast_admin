@@ -84,7 +84,7 @@ class TblusersController extends Controller
         $mt = explode(' ', microtime()); //array to string conversion
         $new = ((int)$mt[1]) * 1000 + ((int)round($mt[0] * 1000));
 
-        if ($model->load(Yii::$app->request->post())&& $model->validate() ) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $file= UploadedFile::getInstance($model,'image');
             if($file){
                 $imagename = 'users_ProfilePicture_'.$new;
@@ -98,7 +98,7 @@ class TblusersController extends Controller
             $model->created_at = time();
             $model->updated_at = time();
             $model->save();
-            return $this->redirect(['index']);
+            return $this->redirect(['view','id' => $model->user_id]);
         }
 
         return $this->render('create', [
@@ -148,7 +148,7 @@ class TblusersController extends Controller
             }
             $model->updated_at = time();
             $model->save();
-            return $this->redirect(['index']);
+            return $this->redirect(['view', 'id' => $model->user_id]);
         }
 
         return $this->render('update', [

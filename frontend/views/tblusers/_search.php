@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'username') ?>
+    <?= $form->field($model, 'username')->textInput(['placeholder'=>'Username','autocomplete'=>'off'])->label(false); ?>
 
     <?php ActiveForm::end(); ?>
 

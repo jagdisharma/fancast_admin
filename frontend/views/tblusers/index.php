@@ -84,7 +84,6 @@ $this->params['breadcrumbs'][] = $this->title;
           $(".form-control").focus();
         });
 
-
         $('.form-control').focus(function(){
           var that = this;
           setTimeout(function(){that.selectionStart = that.selectionEnd = 10000; }, 0);

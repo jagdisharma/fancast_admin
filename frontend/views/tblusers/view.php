@@ -58,7 +58,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'broadcaster',
             [
                 'attribute' => 'broadcaster',
-                'value' => ($model->broadcaster == 0) ? 'No' : 'Yes',
+                'value' => ($model->broadcaster == '0') ? 'No' : 'Yes',
             ],
             'description',
             //'followers',

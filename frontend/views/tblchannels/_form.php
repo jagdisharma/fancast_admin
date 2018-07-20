@@ -20,8 +20,7 @@ use kartik\select2\Select2;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true,'autocomplete'=>'off'])->label('Title') ?>
-
-     <?php if($model->isNewRecord){?>
+    <?php if($model->isNewRecord){?>
         <?= $form->field($model, 'time')->widget(DateTimePicker::classname(), [
             'options' => [
                             'placeholder' => 'Enter time ...',
