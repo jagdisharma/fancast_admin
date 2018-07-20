@@ -54,8 +54,10 @@ class Tblusers extends \yii\db\ActiveRecord
     {
         return [
             [['username', 'email', 'password', 'broadcaster','first_name','last_name'], 'required'],
-            [['username','email'],'unique'],
+            //[['username','email'],'unique'],
             ['email','email'],
+            ['username','unique','message'=>'Username already exists!'],
+            ['email','unique','message'=>'Email already exists!'],
             [['broadcaster'], 'string'],
             [['followers', 'following','status', 'earnings', 'created_at', 'updated_at'], 'integer'],
             [['username', 'email', 'password', 'paypal'], 'string', 'max' => 50],

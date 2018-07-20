@@ -122,7 +122,7 @@ class TblchannelsController extends Controller
                     $modelChanneltags->save();        
                 }
             }
-            return $this->redirect(['view', 'id' => $model->channel_id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
@@ -239,7 +239,7 @@ class TblchannelsController extends Controller
                     }
                 }      
             }
-            return $this->redirect(['view', 'id' => $model->channel_id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [

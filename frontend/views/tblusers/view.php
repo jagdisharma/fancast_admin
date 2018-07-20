@@ -55,7 +55,11 @@ $this->params['breadcrumbs'][] = $this->title;
                         ['width' => '150px']);
                 },
             ],
-            'broadcaster',
+            //'broadcaster',
+            [
+                'attribute' => 'broadcaster',
+                'value' => ($model->broadcaster == 0) ? 'No' : 'Yes',
+            ],
             'description',
             //'followers',
             //'following',

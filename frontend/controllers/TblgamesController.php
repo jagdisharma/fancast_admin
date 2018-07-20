@@ -101,7 +101,7 @@ class TblgamesController extends Controller
                     $modelgamestags->save();        
                 }
             }
-            return $this->redirect(['view', 'id' => $model->game_id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
@@ -211,7 +211,7 @@ class TblgamesController extends Controller
                     }
                 }      
             }
-            return $this->redirect(['view', 'id' => $model->game_id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [

@@ -8,9 +8,11 @@ use frontend\models\Tblusers;
 use frontend\models\Tblchannels;
 use frontend\models\Tbltags;
 use kartik\select2\Select2;
+
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Tblchannels */
 /* @var $form yii\widgets\ActiveForm */
+
 ?>
 
 <div class="tblchannels-form">
@@ -19,19 +21,39 @@ use kartik\select2\Select2;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true,'autocomplete'=>'off'])->label('Title') ?>
 
-    <?= $form->field($model, 'time')->widget(DateTimePicker::classname(), [
-        'options' => [
-                        'placeholder' => 'Enter time ...',
-                        'autocomplete'=>'off',
-                        'readonly'=>true,
-                    ],
-        'layout' => '{picker}{input}{remove}',
-      
-        'pluginOptions' => [
-            'autoclose' => true,
-            'format' => 'yyyy-m-d h:i'
-        ]
-    ]);?>
+     <?php if($model->isNewRecord){?>
+        <?= $form->field($model, 'time')->widget(DateTimePicker::classname(), [
+            'options' => [
+                            'placeholder' => 'Enter time ...',
+                            'autocomplete'=>'off',
+                            'readonly'=>true,
+                            //'value'=> date("Y-m-d H:i",$model->time),
+                        ],
+            'layout' => '{picker}{input}{remove}',
+          
+            'pluginOptions' => [
+                'autoclose' => true,
+                //'format' => 'yyyy-m-d h:i'
+            ],
+            
+        ]);?>
+    <?php }else {?>
+        <?= $form->field($model, 'time')->widget(DateTimePicker::classname(), [
+            'options' => [
+                            'placeholder' => 'Enter time ...',
+                            'autocomplete'=>'off',
+                            'readonly'=>true,
+                            'value'=> date("Y-m-d H:i",$model->time),
+                        ],
+            'layout' => '{picker}{input}{remove}',
+          
+            'pluginOptions' => [
+                'autoclose' => true,
+                //'format' => 'yyyy-m-d h:i'
+            ],
+            
+        ]);?>
+    <?php }?>
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true,'autocomplete'=>'off']) ?>
 
